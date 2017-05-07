@@ -14,10 +14,10 @@ export default class App extends Component {
   }
 
   update() {
-    if (this.state.x < 700) {
+    if (this.state.x < 720) {
       this.setState({x: this.state.x + 1})
     } else {
-      this.setState({x: 0})
+      this.setState({x: -20})
     }
     window.requestAnimationFrame(this.update)
   }
