@@ -7,7 +7,7 @@ export default function body({color, mass, x, y}) {
       x={x}
       y={y}
       radius={mass / 10}
-      fill = {color}
+      fill={color}
     />
   )
 }
