@@ -1,7 +1,7 @@
 import React from "react"
 import {Layer, Rect, Stage} from "react-konva"
 
-export default function space({children}) {
+export default function Space({children}) {
   return (
     <Stage height={700} width={700}>
       <Layer>
