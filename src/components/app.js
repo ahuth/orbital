@@ -7,7 +7,7 @@ export default function App() {
   return (
     <Loop>
       <Space>
-        <Body x={350} y={350} mass={200} color="red" />
+        <Body x={350} y={350} radius={20} color="red" />
       </Space>
     </Loop>
   )
