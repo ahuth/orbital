@@ -1,6 +1,6 @@
 import React from "react"
 import Body from "./body"
-import Loop from "../containers/loop"
+import Loop from "./loop"
 import Space from "./space"
 
 export default function App() {
