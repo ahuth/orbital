@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
+import simulate from "../utils/simulate"
 import {Layer, Rect, Stage} from "react-konva"
 
 export default class Space extends React.Component {
@@ -33,11 +34,9 @@ export default class Space extends React.Component {
     })
   }
 
-  update(time) {
+  update(previous, current) {
     this.setState({
-      bodies: this.state.bodies.map((body) => {
-        return Object.assign({}, body, {position: body.position.add(body.velocity)})
-      })
+      bodies: simulate(previous, current, this.state.bodies)
     })
   }
 
