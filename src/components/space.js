@@ -1,7 +1,20 @@
 import React from "react"
+import PropTypes from "prop-types"
 import {Layer, Rect, Stage} from "react-konva"
 
 export default class Space extends React.Component {
+  componentWillMount() {
+    this.context.loop.subscribe(this.update)
+  }
+
+  componentWillUnmount() {
+    this.context.loop.unsubscribe(this.update)
+  }
+
+  update(time) {
+    // console.log(time)
+  }
+
   render() {
     return (
       <Stage height={700} width={700}>
@@ -20,4 +33,8 @@ export default class Space extends React.Component {
       </Stage>
     )
   }
+}
+
+Space.contextTypes = {
+  loop: PropTypes.object
 }
