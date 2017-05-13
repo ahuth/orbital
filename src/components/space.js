@@ -1,5 +1,5 @@
-import React from "react"
 import PropTypes from "prop-types"
+import React from "react"
 import {Layer, Rect, Stage} from "react-konva"
 
 export default class Space extends React.Component {
