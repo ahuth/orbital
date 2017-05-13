@@ -8,7 +8,7 @@ export default function App() {
   return (
     <Loop>
       <Space>
-        <Body position={new Point(350, 350)} velocity={new Point(2, -4)} radius={20} color="red" />
+        <Body position={new Point(350, 350)} velocity={new Point(100, -40)} radius={20} color="red" />
       </Space>
     </Loop>
   )
