@@ -20,3 +20,7 @@ Body.propTypes = {
   position: PropTypes.instanceOf(Point).isRequired,
   velocity: PropTypes.instanceOf(Point)
 }
+
+Body.defaultProps = {
+  velocity: new Point(0, 0)
+}
