@@ -5,6 +5,7 @@ import {Layer, Rect, Stage} from "react-konva"
 export default class Space extends React.Component {
   constructor(props) {
     super(props)
+    this.update = this.update.bind(this)
     this.state = {
       bodies: React.Children.map(props.children, this.processChild)
     }
@@ -33,7 +34,11 @@ export default class Space extends React.Component {
   }
 
   update(time) {
-    // console.log(time)
+    this.setState({
+      bodies: this.state.bodies.map((body) => {
+        return Object.assign({}, body, {x: body.x + 1, y: body.y + 1})
+      })
+    })
   }
 
   render() {
