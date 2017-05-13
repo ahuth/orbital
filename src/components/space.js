@@ -1,4 +1,3 @@
-import Point from "../utils/point"
 import PropTypes from "prop-types"
 import React from "react"
 import {Layer, Rect, Stage} from "react-konva"
@@ -23,7 +22,8 @@ export default class Space extends React.Component {
   processChild(child) {
     return {
       component: child,
-      position: child.props.position
+      position: child.props.position,
+      velocity: child.props.velocity
     }
   }
 
@@ -36,8 +36,7 @@ export default class Space extends React.Component {
   update(time) {
     this.setState({
       bodies: this.state.bodies.map((body) => {
-        const offset = new Point(1, 1)
-        return Object.assign({}, body, {position: body.position.add(offset)})
+        return Object.assign({}, body, {position: body.position.add(body.velocity)})
       })
     })
   }
