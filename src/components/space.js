@@ -23,6 +23,7 @@ export default class Space extends React.Component {
   processChild(child) {
     return {
       component: child,
+      mass: child.props.mass,
       position: child.props.position,
       velocity: child.props.velocity
     }
