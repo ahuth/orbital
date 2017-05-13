@@ -1,3 +1,4 @@
+import Point from "../utils/point"
 import PropTypes from "prop-types"
 import React from "react"
 import {Layer, Rect, Stage} from "react-konva"
@@ -22,21 +23,21 @@ export default class Space extends React.Component {
   processChild(child) {
     return {
       component: child,
-      x: child.props.x,
-      y: child.props.y
+      position: child.props.position
     }
   }
 
   processedChildren() {
     return this.state.bodies.map((child, index) => {
-      return React.cloneElement(child.component, {x: child.x, y: child.y, key: index})
+      return React.cloneElement(child.component, {position: child.position, key: index})
     })
   }
 
   update(time) {
     this.setState({
       bodies: this.state.bodies.map((body) => {
-        return Object.assign({}, body, {x: body.x + 1, y: body.y + 1})
+        const offset = new Point(1, 1)
+        return Object.assign({}, body, {position: body.position.add(offset)})
       })
     })
   }

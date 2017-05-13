@@ -1,12 +1,13 @@
+import Point from "../utils/point"
 import PropTypes from "prop-types"
 import React from "react"
 import {Circle} from "react-konva"
 
-export default function Body({color, radius, x, y}) {
+export default function Body({color, radius, position}) {
   return (
     <Circle
-      x={x}
-      y={y}
+      x={position.x}
+      y={position.y}
       radius={radius}
       fill={color}
     />
@@ -16,6 +17,5 @@ export default function Body({color, radius, x, y}) {
 Body.propTypes = {
   color: PropTypes.string.isRequired,
   radius: PropTypes.number.isRequired,
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired
+  position: PropTypes.instanceOf(Point).isRequired
 }
