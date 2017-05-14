@@ -1,21 +1,20 @@
 import Point from "./point"
 
-export default function simulate(start, end, bodies) {
-  const elapsedTime = end - start
+export default function simulate(bodies) {
   return bodies.map((body) => {
     const others = bodies.filter(other => other !== body)
     const accelerations = others.map(other => calculateAcceleration(body, other))
     const combinedAccelerations = accelerations.reduce((acc, force) => acc.add(force), new Point(0, 0))
     const newVelocity = body.velocity.add(combinedAccelerations)
-    const normalizedVelocity = normalize(newVelocity, elapsedTime)
+    const normalizedVelocity = normalize(newVelocity)
     const newPosition = body.position.add(normalizedVelocity)
     return Object.assign({}, body, {position: newPosition, velocity: newVelocity})
   })
 }
 
 function normalize(point, time) {
-  const normalizedX = point.x / 1000 * time
-  const normalizedY = point.y / 1000 * time
+  const normalizedX = point.x / 50
+  const normalizedY = point.y / 50
   return new Point(normalizedX, normalizedY)
 }
 

@@ -36,11 +36,9 @@ export default class Loop extends React.Component {
     this.subscriptions = this.subscriptions.filter(subscription => subscription !== callback)
   }
 
-  tick() {
-    const currentTime = Date.now()
-    this.subscriptions.forEach(subscription => subscription(this.previousTime, currentTime))
+  tick(timestamp) {
+    this.subscriptions.forEach(subscription => subscription(timestamp))
     this.request = window.requestAnimationFrame(this.tick)
-    this.previousTime = currentTime
   }
 
   render() {

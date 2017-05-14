@@ -35,9 +35,9 @@ export default class Space extends React.Component {
     })
   }
 
-  update(previous, current) {
+  update() {
     this.setState({
-      bodies: simulate(previous, current, this.state.bodies)
+      bodies: simulate(this.state.bodies)
     })
   }
 
