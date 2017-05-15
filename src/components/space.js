@@ -8,7 +8,7 @@ export default class Space extends React.Component {
     super(props)
     this.update = this.update.bind(this)
     this.state = {
-      bodies: React.Children.map(props.children, this.processChild)
+      bodies: React.Children.map(props.children || [], this.processChild)
     }
   }
 
