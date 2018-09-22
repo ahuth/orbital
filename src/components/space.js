@@ -1,15 +1,10 @@
-import PropTypes from "prop-types"
 import React from "react"
 import simulate from "../utils/simulate"
 import {Layer, Rect, Stage} from "react-konva"
 
 export default class Space extends React.Component {
-  constructor(props) {
-    super(props)
-    this.update = this.update.bind(this)
-    this.state = {
-      bodies: React.Children.map(props.children || [], this.processChild)
-    }
+  state = {
+    bodies: React.Children.map(this.props.children, this.processChild),
   }
 
   componentDidMount() {
@@ -35,7 +30,7 @@ export default class Space extends React.Component {
     })
   }
 
-  update() {
+  update = () => {
     this.setState({
       bodies: simulate(this.state.bodies)
     })
