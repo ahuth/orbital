@@ -12,12 +12,12 @@ export default class Space extends React.Component {
     }
   }
 
-  componentWillMount() {
-    this.context.loop.subscribe(this.update)
+  componentDidMount() {
+    this.props.loop.subscribe(this.update)
   }
 
   componentWillUnmount() {
-    this.context.loop.unsubscribe(this.update)
+    this.props.loop.stop()
   }
 
   processChild(child) {
@@ -59,8 +59,4 @@ export default class Space extends React.Component {
       </Stage>
     )
   }
-}
-
-Space.contextTypes = {
-  loop: PropTypes.object
 }

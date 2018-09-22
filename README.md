@@ -1,17 +1,15 @@
 # Orbital
 
-Declarative gravity simulation in React. Uses canvas and abuses React's context API.
+Declarative gravity simulation in React. Uses canvas.
 
 Something like:
 
 ```js
-<Loop>
-  <Space>
-    <Body position={new Point(500, 400)} velocity={new Point(-10, 38)} mass={1} radius={5} color="white" />
-    <Body position={new Point(700, 700)} velocity={new Point(-20, -30)} mass={1} radius={5} color="white" />
-    <Body position={new Point(350, 350)} mass={50} radius={20} color="red" />
-  </Space>
-</Loop>
+<Space>
+  <Body position={new Point(500, 400)} velocity={new Point(-10, 38)} mass={1} radius={5} color="white" />
+  <Body position={new Point(700, 700)} velocity={new Point(-20, -30)} mass={1} radius={5} color="white" />
+  <Body position={new Point(350, 350)} mass={50} radius={20} color="red" />
+</Space>
 ```
 
 will result in:
