@@ -1,5 +1,4 @@
 import Point from "../utils/point"
-import PropTypes from "prop-types"
 import React from "react"
 import {Circle} from "react-konva"
 
@@ -12,14 +11,6 @@ export default function Body({color, radius, mass, position, velocity}) {
       fill={color}
     />
   )
-}
-
-Body.propTypes = {
-  color: PropTypes.string.isRequired,
-  radius: PropTypes.number.isRequired,
-  mass: PropTypes.number.isRequired,
-  position: PropTypes.instanceOf(Point).isRequired,
-  velocity: PropTypes.instanceOf(Point)
 }
 
 Body.defaultProps = {

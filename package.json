@@ -4,7 +4,6 @@
   "homepage": "https://ahuth.github.io/orbital",
   "dependencies": {
     "konva": "^2.4.0",
-    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-konva": "^1.7.15"
